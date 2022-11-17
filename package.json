@@ -1,0 +1,51 @@
+{
+  "name": "@zforish/prettier-config",
+  "version": "0.0.1",
+  "description": "zforish's prettier config",
+  "main": "index.js",
+  "author": "zforish",
+  "license": "MIT",
+  "files": [
+    "*.md",
+    "index.js",
+    "mini.ali.js",
+    "mini.wechat.js",
+    "utils.js"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s & git add CHANGELOG.md"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint"
+    ],
+    "*": [
+      "prettier --write --ignore-unknown",
+      "git add"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm commitlint --edit $1"
+  },
+  "peerDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.1",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0"
+  }
+}

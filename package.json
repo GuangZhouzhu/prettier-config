@@ -1,5 +1,5 @@
 {
-  "name": "@zforish/prettier-config",
+  "name": "@everish/prettier-config",
   "version": "0.0.1",
   "description": "zforish's prettier config",
   "main": "index.js",
